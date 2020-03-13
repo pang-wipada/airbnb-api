@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.event.PORT || 3000;
 const mongoose = require('mongoose');
 const Place = require('./models/place');
+const cors = require('cors');
+app.use(cors());
 
 const uri = "mongodb://admin:admin@cluster0-shard-00-00-5bv5f.gcp.mongodb.net:27017,cluster0-shard-00-01-5bv5f.gcp.mongodb.net:27017,cluster0-shard-00-02-5bv5f.gcp.mongodb.net:27017/sample_airbnb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority";
 
